@@ -1,4 +1,3 @@
-
 /*
  *creating a class name as LinkedList
  *
@@ -11,7 +10,7 @@ public class LinkedList {
 
     /*
      * class Node that hold data and a reference/link
-	 * to the next Node in the list
+     * to the next Node in the list
      */
     class Node {
         int data;
@@ -78,25 +77,26 @@ public class LinkedList {
         }
 
     }
-         /*
-          * create a push method for adding new node and passing parameter
-          */
-        public void push ( int data){
-            /*
-             * Create a new node
-             */
-            Node newNode = new Node(data);
-            /*
-             * new node is head
-             */
-            newNode.next = head;
-            head = newNode;
 
-        }
-
+    /*
+     * create a push method for adding new node and passing parameter
+     */
+    public void push(int data) {
         /*
-         *  create a method for Insert 30 between 56 and 70
+         * Create a new node
          */
+        Node newNode = new Node(data);
+        /*
+         * new node is head
+         */
+        newNode.next = head;
+        head = newNode;
+
+    }
+
+    /*
+     *  create a method for Insert 30 between 56 and 70
+     */
     public void insertAfter(Node prevNode, int value) {
         /*
          * condition is checked
@@ -116,11 +116,12 @@ public class LinkedList {
         prevNode.next = newNode;
 
     }
-      /*
-       * creat a method name as pop
-       * in pop method used for deleting element
-       * here this is used for delete 1st element in linked list
-       */
+
+    /*
+     * creat a method name as pop
+     * in pop method used for deleting element
+     * here this is used for delete 1st element in linked list
+     */
     public int pop() {
         //variable
         int popData = 0;
@@ -137,5 +138,37 @@ public class LinkedList {
         return popData;
 
     }
+       /*
+        * create a method name as popLast
+        * this is used here to delete last element in linked list
+        */
+    public void popLast() {
+
+        /*
+         * condition is checked
+         */
+        if (head == null) {
+            System.out.println("Stack is empty");
+        }
+        if (head == null) {
+            System.out.println(head.data);
+            head = null;
+        }
+        /*
+         * head is stored in temp variable
+         */
+        Node temp = head;
+
+        /*
+         * while loop is used
+         */
+        while (temp.next.next != null) {
+            temp = temp.next;
+
+        }
+        temp.next = null;
+        System.out.println("Delete last node::");
+
 
     }
+}
